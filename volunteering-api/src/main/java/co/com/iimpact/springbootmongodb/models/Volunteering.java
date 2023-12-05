@@ -16,12 +16,12 @@ public class Volunteering {
     @Id
     private String _id;
     private String idOrganization;
-    private String tittle;
+    private String title;
     private String description;
+    @JsonFormat(pattern = "yyyy-dMM-d")
+    private String dateStart;
     @JsonFormat(pattern = "yyyy-MM-dd")
-    private Date dateStar;
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    private Date DateEnd;
+    private String DateEnd;
     private int weeklyHours;
     private String[] requirements;
     private String socialReason;

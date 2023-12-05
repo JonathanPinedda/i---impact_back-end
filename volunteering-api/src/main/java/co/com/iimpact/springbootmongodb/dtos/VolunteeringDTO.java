@@ -10,10 +10,10 @@ public class VolunteeringDTO {
 
     private String _id;
     private String idOrganization;
-    private String tittle;
+    private String title;
     private String description;
-    private Date dateStar;
-    private Date DateEnd;
+    private String dateStart;
+    private String DateEnd;
     private int weeklyHours;
     private String[] requirements;
     private String socialReason;

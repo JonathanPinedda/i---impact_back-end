@@ -43,11 +43,13 @@ public class VolunteeringController {
     }
 
     @PostMapping("/post")
-    public Volunteering postVolunteering(@RequestBody VolunteeringDTO volunteeringDTO){
-        return new Volunteering(volunteeringDTO.get_id(), volunteeringDTO.getIdOrganization(),
-                volunteeringDTO.getTittle(), volunteeringDTO.getDescription(), volunteeringDTO.getDateStar(), volunteeringDTO.getDateEnd(),
-                volunteeringDTO.getWeeklyHours(), volunteeringDTO.getRequirements(), volunteeringDTO.getSocialReason(),volunteeringDTO.getOrganization(),
-                volunteeringDTO.getNeededSkills());
+    public Volunteering postVolunteering(@RequestBody VolunteeringDTO volunteeringDTO) {
+        Volunteering volunteering = new Volunteering(volunteeringDTO.get_id(), volunteeringDTO.getIdOrganization(),
+                volunteeringDTO.getTitle(), volunteeringDTO.getDescription(), volunteeringDTO.getDateStart(), volunteeringDTO.getDateEnd(),
+                volunteeringDTO.getWeeklyHours(), volunteeringDTO.getRequirements(), volunteeringDTO.getSocialReason(),
+                volunteeringDTO.getOrganization(), volunteeringDTO.getNeededSkills());
+        service.addNewVolunteering(volunteering);
+        return volunteering;
     }
 
     @DeleteMapping("/dell/{id}")

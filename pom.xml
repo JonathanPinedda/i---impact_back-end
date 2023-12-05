@@ -21,6 +21,7 @@
         <module>volunteer-api</module>
         <module>volunteering-api</module>
         <module>gateway-api</module>
+        <module>Reload-Images</module>
     </modules>
 
     <properties>

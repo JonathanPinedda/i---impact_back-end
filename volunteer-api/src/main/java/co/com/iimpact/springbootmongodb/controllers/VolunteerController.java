@@ -42,11 +42,13 @@ public class VolunteerController {
     }
 
     @PostMapping("/post")
-    public Volunteer postVolunteer(@RequestBody VolunteerDTO volunteerDTO){
-        return new Volunteer(volunteerDTO.get_id(), volunteerDTO.getName(),
+    public Volunteer addVolunteer(@RequestBody VolunteerDTO volunteerDTO){
+        Volunteer volunteer = new Volunteer(volunteerDTO.get_id(), volunteerDTO.getName(),
                 volunteerDTO.getAge(), volunteerDTO.getAddress(), volunteerDTO.getCity(),
                 volunteerDTO.getCountry(), volunteerDTO.getEmail(), volunteerDTO.getCellphone(),
                 volunteerDTO.getPassword(), volunteerDTO.getHobbies(), volunteerDTO.getSkills());
+        service.addNewVolunteer(volunteer);
+        return volunteer;
     }
 
     @DeleteMapping("/dell/{id}")
